@@ -1,0 +1,236 @@
+/*
+================
+Font
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/*
+================
+Variables
+================
+*/
+:root {
+  --clr-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --clr-light-grayish-blue: hsl(234, 14%, 74%);
+  --clr-grayish-blue: hsl(233, 13%, 49%);
+  --clr-dark-grayish-blue: hsl(232, 13%, 33%);
+  --clr-purple: hsl(237, 63%, 64%);
+  --clr-white: #fff;
+  --clr-dark: #000;
+  --ff-primary: 'Montserrat', sans-serif;
+  --radius: 1rem;
+  --transition: all 0.25s linear;
+  --linear-gradient: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --dark-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+/*
+==================
+Global Styles
+==================
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 2rem 0;
+}
+li {
+  display: block;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  background-color: var(--clr-very-light-grayish-blue);
+}
+h1 {
+  text-transform: capitalize;
+  word-spacing: 0.3rem;
+  font-family: var(--ff-primary);
+}
+h2 {
+  text-transform: capitalize;
+  font-family: var(--ff-primary);
+  margin: 1rem 0;
+}
+h3 {
+  font-weight: 700;
+  font-family: var(--ff-primary);
+  margin: 1.5rem 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1rem;
+}
+h3 {
+  font-size: 3.5rem;
+}
+p {
+  font-size: 0.9rem;
+}
+nav,
+main {
+  display: block;
+}
+/* global classes */
+.btn {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  border: transparent;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/*
+=====================
+Styles
+=====================
+*/
+.title {
+  margin: 3rem auto 2rem;
+  text-align: center;
+  color: var(--clr-dark-grayish-blue);
+}
+.plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.plan p {
+  color: var(--clr-light-grayish-blue);
+}
+.change-plan {
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 1.7rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border: transparent;
+  border-radius: var(--radius);
+  background: var(--linear-gradient);
+  outline: none;
+  cursor: pointer;
+}
+.change-plan::after {
+  position: absolute;
+  top: 0.25rem;
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.change-plan.left::after {
+  left: 0.28rem;
+}
+.change-plan.right::after {
+  left: 1.58rem;
+}
+
+.main {
+  margin-top: 4rem;
+}
+.container {
+  display: grid;
+  justify-items: center;
+}
+.card {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  width: 90%;
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+.card:nth-child(1) {
+  background: var(--clr-white);
+  color: var(--clr-dark-grayish-blue);
+}
+.card:nth-child(2) {
+  background: var(--linear-gradient);
+  color: var(--clr-white);
+}
+.card:nth-child(3) {
+  background: var(--clr-white);
+  color: var(--clr-dark-grayish-blue);
+}
+@media screen and (min-width: 800px) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  .card {
+    width: 100%;
+  }
+  .card:nth-child(1) {
+    height: 95%;
+  }
+  .card:nth-child(2) {
+    height: 100%;
+  }
+  .card:nth-child(3) {
+    height: 95%;
+  }
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price span {
+  font-size: 2rem;
+}
+/* card li button */
+.card:nth-child(2n - 1) li {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card:nth-child(2n - 1) li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card:nth-child(2n - 1) button {
+  background-color: var(--clr-purple);
+  color: var(--clr-white);
+}
+.card:nth-child(2n - 1) button:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-dark-grayish-blue);
+  border: 1px solid var(--clr-dark-grayish-blue);
+}
+.card:nth-child(2n) li {
+  border-top: 1px solid var(--clr-light-grayish-blue);
+}
+.card:nth-child(2n) li:last-child {
+  border-bottom: 1px solid var(--clr-light-grayish-blue);
+}
+.card:nth-child(2n) button {
+  background-color: var(--clr-white);
+  color: var(--clr-grayish-blue);
+}
+.card:nth-child(2n) button:hover {
+  background-color: var(--clr-purple);
+  color: var(--clr-white);
+  border: 1px solid var(--clr-very-light-grayish-blue);
+}
